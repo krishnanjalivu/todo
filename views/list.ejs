@@ -1,0 +1,21 @@
+<%- include("header") -%>
+    <div id="heading" class="box">
+    <h1> <%= listtitle%> </h1>
+    </div>
+<div class="box">
+  <form id="forname" action="/delete" method="post">
+  <% todo.forEach(function(item){%>
+    <div class="item">
+      <input type="checkbox" name="checkbox1"  onChange="document.getElementById('forname').submit()" value="<%= item._id %>">
+    <p><%= item.name%> </p>
+      </div>
+  </form>
+  <%})%>
+  <form class="item" action="/" method="post">
+    <input type="text" name="newitem" placeholder="NEW ITEM" autocomplete="off">
+    <button type="submit" name="list" value=<%= listtitle%>> + </button>
+
+  </form>
+</div>
+
+<%- include("footer") -%>
